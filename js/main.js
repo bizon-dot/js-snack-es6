@@ -27,12 +27,14 @@ for (let index = 0; index < this.length; index++) {
     }
 }
 
-//Destructuring
-let modelBikeWithMinimumWeight = bikeWithMinimumWeight.model;
-let weightBikeWithMinimumWeight = bikeWithMinimumWeight.weight;
+// Destructuring
+// let modelBikeWithMinimumWeight = bikeWithMinimumWeight.model;
+// let weightBikeWithMinimumWeight = bikeWithMinimumWeight.weight;
+
+const {model, weight} = bikeWithMinimumWeight;
 
 //Template literal
-console.log(`La bicicletta con il peso minore è la ${modelBikeWithMinimumWeight} per un totale di ${weightBikeWithMinimumWeight}`);
+console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
 
 
 // Snack2
