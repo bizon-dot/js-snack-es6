@@ -19,22 +19,50 @@ const bikes = [{
 
 ];
 
-
-let bikeWithMinimumWeight = bikes[0];
-for (let index = 0; index < this.length; index++) {
-    if (bikes[index].weight < lightBicycle.weight) {
-        bikeWithMinimumWeight = bikes[index];
+// Bonus aggiungo la arrow functin come metodo all'oggetto 
+bikes.minimumWeight = (bikes) => {
+    
+    let bikeWithMinimumWeight = bikes[0];
+    for (let index = 0; index < bikes.length; index++) {
+        if (bikes[index].weight < bikeWithMinimumWeight.weight) {
+            bikeWithMinimumWeight = bikes[index];
+        }
     }
+    return bikeWithMinimumWeight;
 }
 
-// Destructuring
-// let modelBikeWithMinimumWeight = bikeWithMinimumWeight.model;
-// let weightBikeWithMinimumWeight = bikeWithMinimumWeight.weight;
+let bikeWithMinimumWeight = bikes.minimumWeight(bikes);
 
+// Destructuring
+let modelBikeWithMinimumWeight = bikeWithMinimumWeight.model;
+let weightBikeWithMinimumWeight = bikeWithMinimumWeight.weight;
+
+// Destructuring - Refactor
 const {model, weight} = bikeWithMinimumWeight;
 
 //Template literal
 console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
+// let bikeWithMinimumWeight = bikes.minimumWeight();
+
+
+// let bikeWithMinimumWeight = bikes[0];
+// for (let index = 0; index < this.length; index++) {
+//     if (bikes[index].weight < lightBicycle.weight) {
+//         bikeWithMinimumWeight = bikes[index];
+//     }
+// }
+
+// // Destructuring
+// // let modelBikeWithMinimumWeight = bikeWithMinimumWeight.model;
+// // let weightBikeWithMinimumWeight = bikeWithMinimumWeight.weight;
+
+// // Destructuring - Refactor
+// const {model, weight} = bikeWithMinimumWeight;
+
+// //Template literal
+// console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
+
+//BONUS 
 
 
 // Snack2
@@ -43,19 +71,3 @@ console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${
 // Generare numeri random al posto degli 0 nelle proprietà:
 // Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
-
-
-
-
-// bikes.minimumWeight = function() {
-//     let lightBicycle = this[0];
-//     for (let index = 0; index < this.length; index++) {
-//         if (this[index].weight < lightBicycle.weight) {
-//             return lightBicycle = this[index];
-//         }
-
-
-//     }
-// }
-
-// let bikeWithMinimumWeight = bikes.minimumWeight();
