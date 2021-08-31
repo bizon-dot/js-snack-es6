@@ -102,5 +102,18 @@ nameTeams.forEach((teamName) => {
         fouls: Math.floor(Math.random() * 40)
     };
     teams.push(team);
-    
 });
+
+console.log(teams);
+
+let teamsFouls = [];
+for (const key in teams) {
+    if (teams.hasOwnProperty.call(teams, key)) {
+        const team = teams[key];
+        const {teamName, fouls} = team;
+        let teamFouls = [teamName, fouls];
+        teamsFouls.push(teamFouls);
+    }
+}
+
+console.log(teamsFouls);
