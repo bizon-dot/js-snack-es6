@@ -31,7 +31,7 @@ const bikes = [{
 */
 
 bikes.minimumWeight = (bikes) => {
-    
+
     let bikeWithMinimumWeight = bikes[0];
     for (let index = 0; index < bikes.length; index++) {
         if (bikes[index].weight < bikeWithMinimumWeight.weight) {
@@ -48,7 +48,10 @@ let modelBikeWithMinimumWeight = bikeWithMinimumWeight.model;
 let weightBikeWithMinimumWeight = bikeWithMinimumWeight.weight;
 
 // Destructuring - Refactor
-const {model, weight} = bikeWithMinimumWeight;
+const {
+    model,
+    weight
+} = bikeWithMinimumWeight;
 
 //Template literal
 console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
@@ -83,14 +86,21 @@ console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${
 // console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
 
 
-
-
-
-
-
 // Snack2
 // Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 // Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
 // Generare numeri random al posto degli 0 nelle proprietà:
 // Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+const nameTeams = ["Tokyo", "Berlino", "Mosca", "Toronto"];
+const teams = [];
+nameTeams.forEach((teamName) => {
+    let team = {
+        teamName: teamName,
+        points: Math.floor(Math.random() * 11),
+        fouls: Math.floor(Math.random() * 40)
+    };
+    teams.push(team);
+    
+});
