@@ -4,13 +4,15 @@
 // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 // BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
 
+//Instanzio l'oggetto
+
 const bikes = [{
         model: "slim",
         weight: 2
     },
     {
         model: "medium",
-        weight: 25
+        weight: 5
     },
     {
         model: "fat",
@@ -19,7 +21,15 @@ const bikes = [{
 
 ];
 
-// Bonus aggiungo la arrow functin come metodo all'oggetto 
+
+/*
+    =======================================================================================================
+                                Bonus: aggiungo una arrow function per trovare la bici 
+                                       con peso minore come metodo all'oggetto 
+    =======================================================================================================
+    
+*/
+
 bikes.minimumWeight = (bikes) => {
     
     let bikeWithMinimumWeight = bikes[0];
@@ -42,6 +52,16 @@ const {model, weight} = bikeWithMinimumWeight;
 
 //Template literal
 console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
+
+
+/*  
+    =======================================================================================================
+                                SNACK 1
+    =======================================================================================================
+    
+*/
+
+
 // let bikeWithMinimumWeight = bikes.minimumWeight();
 
 
@@ -62,7 +82,10 @@ console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${
 // //Template literal
 // console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
 
-//BONUS 
+
+
+
+
 
 
 // Snack2
