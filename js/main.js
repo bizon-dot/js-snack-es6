@@ -39,7 +39,6 @@ const bikes = [{
 */
 
 bikes.minimumWeight = (bikes) => {
-
     let bikeWithMinimumWeight = bikes[0];
     for (let index = 0; index < bikes.length; index++) {
         if (bikes[index].weight < bikeWithMinimumWeight.weight) {
@@ -49,8 +48,7 @@ bikes.minimumWeight = (bikes) => {
     return bikeWithMinimumWeight;
 }
 
-let bikeWithMinimumWeight = bikes.minimumWeight(bikes);
-
+ 
 // Destructuring
 // let modelBikeWithMinimumWeight = bikeWithMinimumWeight.model;
 // let weightBikeWithMinimumWeight = bikeWithMinimumWeight.weight;
@@ -59,7 +57,7 @@ let bikeWithMinimumWeight = bikes.minimumWeight(bikes);
 const {
     model,
     weight
-} = bikeWithMinimumWeight;
+} = bikes.minimumWeight(bikes);
 
 //Template literal
 console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
@@ -136,3 +134,38 @@ console.log(teamsFouls);
 
 // //Template literal
 // console.log(`La bicicletta con il peso minore è la ${model} per un totale di ${weight}`);
+
+
+/*
+    =======================================================================================================
+                                                        SNACK3 
+    =======================================================================================================
+    
+*/
+
+
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+// Usiamo i nuovi metodi degli array foreach o filter.
+
+//genero il range in maniera dinamica
+const calculateRange = (min, max) => {
+        let tmp = [];
+        for (let i = min; i <= max; i++) {
+            tmp.push(i);
+        }
+        return tmp;
+
+}
+
+let arr = ["0",1, "Giove", "Marte", 3369];
+let range = calculateRange(0,1);
+
+// filter - arrow function
+// prendo l'index di ogni elemento e controllo che esista nel range  
+let newArr = arr.filter((element,index)=>{
+    return range.indexOf(index) > -1;
+});
+
+console.log(newArr);
+
